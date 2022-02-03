@@ -1,0 +1,22 @@
+<h1>Todo</h1>
+
+<div class="container">
+    <form (ngSubmit)="saveTodo()">
+
+    <fieldset class="form-group">
+        <label>Description</label>
+        <input type="text" [(ngModel)]="todo.description" class="form-control" name="description" required="required">
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label>Last Updated</label>
+    <input type="date" 
+    [ngModel]="todo.lastUpdated | date : 'yyyy-MM-dd' " 
+    (ngModelChange) ="todo.lastUpdated = $event"
+    class="form-control" name="lastUpdated" required="required">
+    </fieldset>
+
+    <button type="submit" class="btn btn-success" (click)="saveTodo()">Save</button>
+</form>
+
+</div>
